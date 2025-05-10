@@ -1,6 +1,5 @@
 Aligning contigs to reference...
-	Aligning contigs to the reference
-Filtering alignments...
+	Using existing alignments...
 Parsing coords...
 Loading reference...
 	Loaded [reference_b]
@@ -12,6 +11,10 @@ Best alignment score: 668.0 (LEN: 668, IDY: 100.00), Total number of alignments:
 			Looking for the best set of alignments (out of 1 total alignments)
 			The best set is below. Score: 668.0, number of alignments: 1, unaligned bases: 82
 		Alignment: 333 1000 | 83 750 | 668 668 | 100.0 | reference_b contig_1
+
+CONTIG: contig_2 (330bp)
+		This contig is unaligned. (330 bp)
+		Unaligned bases: 330 (number of Ns: 0)
 
 Analyzing coverage...
 Writing SNPs into /ibex/user/majnouym/cs249_a2/outputs/task_1_3_1/quast_output/contigs_reports/minimap_output/assymbly_b.used_snps
@@ -30,9 +33,9 @@ Results:
 	Misassembled Contigs: 0
 	Misassembled Contig Bases: 0
 	Misassemblies Inter-Contig Overlap ("Extra" Aligned Bases): 0
-Unaligned Contigs: 0 + 0 part
+Unaligned Contigs: 1 + 0 part
 Half Unaligned Contigs with Misassemblies: 0
-Unaligned Bases in Fully and Partially Unaligned Contigs: 0
+Unaligned Bases in Fully and Partially Unaligned Contigs: 330
 
 Ambiguously Mapped Contigs: 0
 Total Bases in Ambiguously Mapped Contigs: 0

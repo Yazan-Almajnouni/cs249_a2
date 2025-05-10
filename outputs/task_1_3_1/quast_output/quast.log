@@ -1,4 +1,4 @@
-/ibex/sw/rl9c/quast/5.2.0/rl9_conda3/quast-5.2.0/quast.py outputs/task_1_3_1/assymbly_b.fasta -r data/toy_dataset/reference_b.fasta -o outputs/task_1_3_1/quast_output
+/ibex/sw/rl9c/quast/5.2.0/rl9_conda3/quast-5.2.0/quast.py outputs/task_1_3_1/assymbly_b.fasta -r data/toy_dataset/reference_b.fasta -o outputs/task_1_3_1/quast_output --min-contig 100
 
 Version: 5.2.0
 
@@ -7,7 +7,7 @@ System information:
   Python version: 3.5.6
   CPUs number: 40
 
-Started: 2025-05-10 13:51:13
+Started: 2025-05-10 14:45:17
 
 Logging to /ibex/user/majnouym/cs249_a2/outputs/task_1_3_1/quast_output/quast.log
 NOTICE: Output directory already exists and looks like a QUAST output dir. Existing results can be reused (e.g. previously generated alignments)!
@@ -15,7 +15,7 @@ NOTICE: Maximum number of threads is set to 10 (use --threads option to set it m
 
 CWD: /ibex/user/majnouym/cs249_a2
 Main parameters: 
-  MODE: default, threads: 10, min contig length: 500, min alignment length: 65, min alignment IDY: 95.0, \
+  MODE: default, threads: 10, min contig length: 100, min alignment length: 65, min alignment IDY: 95.0, \
   ambiguity: one, min local misassembly length: 200, min extensive misassembly length: 1000
 
 Reference:
@@ -25,14 +25,14 @@ Contigs:
   Pre-processing...
   outputs/task_1_3_1/assymbly_b.fasta ==> assymbly_b
 
-2025-05-10 13:51:13
+2025-05-10 14:45:18
 Running Basic statistics processor...
   Reference genome:
     reference_b.fasta, length = 1000, num fragments = 1, GC % = 52.00
   Contig files: 
     assymbly_b
   Calculating N50 and L50...
-    assymbly_b, N50 = 750, L50 = 1, auN = 750.0, Total length = 750, GC % = 52.53, # N's per 100 kbp =  0.00
+    assymbly_b, N50 = 750, L50 = 1, auN = 621.7, Total length = 1080, GC % = 52.31, # N's per 100 kbp =  0.00
   Drawing Nx plot...
     saved to /ibex/user/majnouym/cs249_a2/outputs/task_1_3_1/quast_output/basic_stats/Nx_plot.pdf
   Drawing NGx plot...
@@ -45,16 +45,11 @@ Running Basic statistics processor...
     saved to /ibex/user/majnouym/cs249_a2/outputs/task_1_3_1/quast_output/basic_stats/assymbly_b_GC_content_plot.pdf
 Done.
 
-2025-05-10 13:51:15
+2025-05-10 14:45:19
 Running Contig analyzer...
   assymbly_b
   Logging to files /ibex/user/majnouym/cs249_a2/outputs/task_1_3_1/quast_output/contigs_reports/contigs_report_assymbly_b.stdout and contigs_report_assymbly_b.stderr...
-  Aligning contigs to the reference
-  /ibex/sw/rl9c/quast/5.2.0/rl9_conda3/quast-5.2.0/quast_libs/minimap2/minimap2 -c \
-  -x asm10 -B5 -O4,16 --no-long-join -r 200 -N 50 -s 65 -z 200 --mask-level 0.9 --min-occ \
-  200 -g 2500 --score-N 2 --cs -t 10 outputs/task_1_3_1/quast_output/quast_corrected_input/reference_b.fasta \
-  outputs/task_1_3_1/quast_output/quast_corrected_input/assymbly_b.fasta > outputs/task_1_3_1/quast_output/contigs_reports/minimap_output/assymbly_b.coords_tmp \
-  2>> outputs/task_1_3_1/quast_output/contigs_reports/contigs_report_assymbly_b.stderr
+  Using existing alignments... 
   Analysis is finished.
 
   Creating total report...
@@ -69,7 +64,7 @@ Running Contig analyzer...
     saved to /ibex/user/majnouym/cs249_a2/outputs/task_1_3_1/quast_output/contigs_reports/misassemblies_frcurve_plot.pdf
 Done.
 
-2025-05-10 13:51:15
+2025-05-10 14:45:20
 Running NA-NGA calculation...
   assymbly_b, Largest alignment = 668, NA50 = 668, NGA50 = 668, LA50 = 1, LGA50 = 1
   Drawing cumulative plot...
@@ -80,7 +75,7 @@ Running NA-NGA calculation...
     saved to /ibex/user/majnouym/cs249_a2/outputs/task_1_3_1/quast_output/aligned_stats/NGAx_plot.pdf
 Done.
 
-2025-05-10 13:51:16
+2025-05-10 14:45:20
 Running Genome analyzer...
   NOTICE: No file with genomic features were provided. Use the --features option if you want to specify it.
 
@@ -92,14 +87,14 @@ Done.
 
 NOTICE: Genes are not predicted by default. Use --gene-finding or --glimmer option to enable it.
 
-2025-05-10 13:51:16
+2025-05-10 14:45:20
 Creating large visual summaries...
 This may take a while: press Ctrl-C to skip this step..
   1 of 2: Creating PDF with all tables and plots...
   2 of 2: Creating Icarus viewers...
 Done
 
-2025-05-10 13:51:17
+2025-05-10 14:45:22
 RESULTS:
   Text versions of total report are saved to /ibex/user/majnouym/cs249_a2/outputs/task_1_3_1/quast_output/report.txt, report.tsv, and report.tex
   Text versions of transposed total report are saved to /ibex/user/majnouym/cs249_a2/outputs/task_1_3_1/quast_output/transposed_report.txt, transposed_report.tsv, and transposed_report.tex
@@ -108,8 +103,8 @@ RESULTS:
   Icarus (contig browser) is saved to /ibex/user/majnouym/cs249_a2/outputs/task_1_3_1/quast_output/icarus.html
   Log is saved to /ibex/user/majnouym/cs249_a2/outputs/task_1_3_1/quast_output/quast.log
 
-Finished: 2025-05-10 13:51:17
-Elapsed time: 0:00:04.273259
+Finished: 2025-05-10 14:45:22
+Elapsed time: 0:00:04.252018
 NOTICEs: 5; WARNINGs: 0; non-fatal ERRORs: 0
 
 Thank you for using QUAST!
