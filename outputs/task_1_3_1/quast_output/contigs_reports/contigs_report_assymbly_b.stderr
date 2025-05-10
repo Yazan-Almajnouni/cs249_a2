@@ -18,3 +18,53 @@
 [M::main] Version: 2.24-r1122
 [M::main] CMD: /ibex/sw/rl9c/quast/5.2.0/rl9_conda3/quast-5.2.0/quast_libs/minimap2/minimap2 -c -x asm10 -B5 -O4,16 --no-long-join -r 200 -N 50 -s 65 -z 200 --mask-level 0.9 --min-occ 200 -g 2500 --score-N 2 --cs -t 10 /ibex/user/majnouym/cs249_a2/outputs/task_1_3_1/quast_output/quast_corrected_input/reference_b.fasta /ibex/user/majnouym/cs249_a2/outputs/task_1_3_1/quast_output/quast_corrected_input/assymbly_b.fasta
 [M::main] Real time: 0.004 sec; CPU: 0.012 sec; Peak RSS: 0.069 GB
+[M::mm_idx_gen::0.001*4.71] collected minimizers
+[M::mm_idx_gen::0.002*4.93] sorted minimizers
+[M::main::0.002*4.91] loaded/built the index for 1 target sequence(s)
+[M::mm_mapopt_update::0.002*4.80] mid_occ = 200
+[M::mm_idx_stat] kmer size: 19; skip: 19; is_hpc: 0; #seq: 1
+[M::mm_idx_stat::0.002*4.73] distinct minimizers: 96 (100.00% are singletons); average occurrences: 1.000; average spacing: 10.417; total length: 1000
+[M::worker_pipeline::0.003*3.98] mapped 1 sequences
+[M::main] Version: 2.24-r1122
+[M::main] CMD: /ibex/sw/rl9c/quast/5.2.0/rl9_conda3/quast-5.2.0/quast_libs/minimap2/minimap2 -c -x asm10 -B5 -O4,16 --no-long-join -r 200 -N 50 -s 65 -z 200 --mask-level 0.9 --min-occ 200 -g 2500 --score-N 2 --cs -t 10 /ibex/user/majnouym/cs249_a2/outputs/task_1_3_1/quast_output/quast_corrected_input/reference_b.fasta /ibex/user/majnouym/cs249_a2/outputs/task_1_3_1/quast_output/quast_corrected_input/assymbly_b.fasta
+[M::main] Real time: 0.004 sec; CPU: 0.012 sec; Peak RSS: 0.092 GB
+[M::mm_idx_gen::0.000*4.28] collected minimizers
+[M::mm_idx_gen::0.002*5.43] sorted minimizers
+[M::main::0.002*5.40] loaded/built the index for 1 target sequence(s)
+[M::mm_mapopt_update::0.002*5.23] mid_occ = 200
+[M::mm_idx_stat] kmer size: 19; skip: 19; is_hpc: 0; #seq: 1
+[M::mm_idx_stat::0.002*5.14] distinct minimizers: 96 (100.00% are singletons); average occurrences: 1.000; average spacing: 10.417; total length: 1000
+[M::worker_pipeline::0.003*4.10] mapped 1 sequences
+[M::main] Version: 2.24-r1122
+[M::main] CMD: /ibex/sw/rl9c/quast/5.2.0/rl9_conda3/quast-5.2.0/quast_libs/minimap2/minimap2 -c -x asm10 -B5 -O4,16 --no-long-join -r 200 -N 50 -s 65 -z 200 --mask-level 0.9 --min-occ 200 -g 2500 --score-N 2 --cs -t 10 /ibex/user/majnouym/cs249_a2/outputs/task_1_3_1/quast_output/quast_corrected_input/reference_b.fasta /ibex/user/majnouym/cs249_a2/outputs/task_1_3_1/quast_output/quast_corrected_input/assymbly_b.fasta
+[M::main] Real time: 0.003 sec; CPU: 0.011 sec; Peak RSS: 0.049 GB
+[M::mm_idx_gen::0.001*4.26] collected minimizers
+[M::mm_idx_gen::0.002*4.45] sorted minimizers
+[M::main::0.002*4.41] loaded/built the index for 1 target sequence(s)
+[M::mm_mapopt_update::0.002*4.29] mid_occ = 200
+[M::mm_idx_stat] kmer size: 19; skip: 19; is_hpc: 0; #seq: 1
+[M::mm_idx_stat::0.002*4.22] distinct minimizers: 96 (100.00% are singletons); average occurrences: 1.000; average spacing: 10.417; total length: 1000
+[M::worker_pipeline::0.003*3.50] mapped 1 sequences
+[M::main] Version: 2.24-r1122
+[M::main] CMD: /ibex/sw/rl9c/quast/5.2.0/rl9_conda3/quast-5.2.0/quast_libs/minimap2/minimap2 -c -x asm10 -B5 -O4,16 --no-long-join -r 200 -N 50 -s 65 -z 200 --mask-level 0.9 --min-occ 200 -g 2500 --score-N 2 --cs -t 10 /ibex/user/majnouym/cs249_a2/outputs/task_1_3_1/quast_output/quast_corrected_input/reference_b.fasta /ibex/user/majnouym/cs249_a2/outputs/task_1_3_1/quast_output/quast_corrected_input/assymbly_b.fasta
+[M::main] Real time: 0.003 sec; CPU: 0.009 sec; Peak RSS: 0.049 GB
+[M::mm_idx_gen::0.001*3.58] collected minimizers
+[M::mm_idx_gen::0.002*4.72] sorted minimizers
+[M::main::0.002*4.71] loaded/built the index for 1 target sequence(s)
+[M::mm_mapopt_update::0.002*4.56] mid_occ = 200
+[M::mm_idx_stat] kmer size: 19; skip: 19; is_hpc: 0; #seq: 1
+[M::mm_idx_stat::0.002*4.49] distinct minimizers: 96 (100.00% are singletons); average occurrences: 1.000; average spacing: 10.417; total length: 1000
+[M::worker_pipeline::0.003*3.64] mapped 1 sequences
+[M::main] Version: 2.24-r1122
+[M::main] CMD: /ibex/sw/rl9c/quast/5.2.0/rl9_conda3/quast-5.2.0/quast_libs/minimap2/minimap2 -c -x asm10 -B5 -O4,16 --no-long-join -r 200 -N 50 -s 65 -z 200 --mask-level 0.9 --min-occ 200 -g 2500 --score-N 2 --cs -t 10 /ibex/user/majnouym/cs249_a2/outputs/task_1_3_1/quast_output/quast_corrected_input/reference_b.fasta /ibex/user/majnouym/cs249_a2/outputs/task_1_3_1/quast_output/quast_corrected_input/assymbly_b.fasta
+[M::main] Real time: 0.003 sec; CPU: 0.010 sec; Peak RSS: 0.049 GB
+[M::mm_idx_gen::0.001*5.02] collected minimizers
+[M::mm_idx_gen::0.002*5.37] sorted minimizers
+[M::main::0.002*5.35] loaded/built the index for 1 target sequence(s)
+[M::mm_mapopt_update::0.002*5.22] mid_occ = 200
+[M::mm_idx_stat] kmer size: 19; skip: 19; is_hpc: 0; #seq: 1
+[M::mm_idx_stat::0.002*5.13] distinct minimizers: 96 (100.00% are singletons); average occurrences: 1.000; average spacing: 10.417; total length: 1000
+[M::worker_pipeline::0.003*4.24] mapped 1 sequences
+[M::main] Version: 2.24-r1122
+[M::main] CMD: /ibex/sw/rl9c/quast/5.2.0/rl9_conda3/quast-5.2.0/quast_libs/minimap2/minimap2 -c -x asm10 -B5 -O4,16 --no-long-join -r 200 -N 50 -s 65 -z 200 --mask-level 0.9 --min-occ 200 -g 2500 --score-N 2 --cs -t 10 /ibex/user/majnouym/cs249_a2/outputs/task_1_3_1/quast_output/quast_corrected_input/reference_b.fasta /ibex/user/majnouym/cs249_a2/outputs/task_1_3_1/quast_output/quast_corrected_input/assymbly_b.fasta
+[M::main] Real time: 0.003 sec; CPU: 0.012 sec; Peak RSS: 0.049 GB

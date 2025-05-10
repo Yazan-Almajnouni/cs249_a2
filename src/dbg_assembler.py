@@ -8,7 +8,7 @@ import argparse
 import sys
 from collections import defaultdict
 from copy import deepcopy
-
+from collections import Counter
 
 def parse_fastq(fastq_files):
     """
@@ -63,52 +63,73 @@ def find_eulerian_trails(adj, indeg, outdeg):
     Find all Eulerian trails in the graph (one per component).
     Returns list of contig strings.
     """
-    # Collect all nodes: those with outgoing edges (keys of adj)
-    # and those that appear as targets (values in adj).
+    # Collect and sort all nodes for determinism
     all_nodes = set(adj.keys())
-    for vs in adj.values():
-        all_nodes.update(vs)
+    for targets in adj.values():
+        all_nodes.update(targets)
+    all_nodes = sorted(all_nodes)
 
-    # Build a mutable copy of adjacency for every node,
-    # defaulting to an empty list if no outgoing edges.
-    graph = {u: list(adj.get(u, [])) for u in all_nodes}
+    # Build a mutable copy of adjacency, sorting edges descending
+    # so that pop() gives the smallest neighbor first.
+    graph = {u: sorted(adj.get(u, []), reverse=True) for u in all_nodes}
 
     contigs = []
 
     def pick_start():
-        # Prefer nodes where outdeg>indeg (starts of trails)
+        # Prefer a node with outdeg>indeg if it has edges
         for u in all_nodes:
-            if graph[u] and outdeg[u] > indeg[u]:
+            if graph[u] and outdeg.get(u, 0) > indeg.get(u, 0):
                 return u
-        # Fallback: any node with remaining edges
+        # Otherwise any node with remaining edges
         for u in all_nodes:
             if graph[u]:
                 return u
         return None
 
+    # For each non‐empty component, run the Hierholzer‐style build
     while True:
         start = pick_start()
         if start is None:
             break
 
-        stack = [start]
-        path = []
-        while stack:
-            v = stack[-1]
-            if graph[v]:
-                w = graph[v].pop()
-                stack.append(w)
-            else:
-                path.append(stack.pop())
-        path.reverse()
+        # Phase 1: build an initial trail (may not be a cycle)
+        cycle = [start]
+        v = start
+        while graph[v]:
+            w = graph[v].pop()
+            cycle.append(w)
+            v = w
 
-        if len(path) < 2:
-            continue
-        # Reconstruct contig: first node in full, then append last char of each
-        seq = path[0]
-        for node in path[1:]:
-            seq += node[-1]
-        contigs.append(seq)
+        # Phase 2: splice in subtrails until no unused edges remain
+        while True:
+            # find a vertex in the current trail with unused edges
+            for idx, u in enumerate(cycle):
+                if graph[u]:
+                    break
+            else:
+                # no such vertex, we're done with this component
+                break
+
+            # build a subtrail starting at u
+            subtrail = [u]
+            v = u
+            while graph[v]:
+                w = graph[v].pop()
+                subtrail.append(w)
+                v = w
+                # if it closes back at u, we can stop early
+                if v == u:
+                    break
+
+            # splice the subtrail into the main trail at position idx
+            cycle = cycle[:idx] + subtrail + cycle[idx+1:]
+
+        # convert vertex trail to string contig
+        if len(cycle) > 1:
+            seq = cycle[0]
+            for node in cycle[1:]:
+                seq += node[-1]
+            contigs.append(seq)
 
     return contigs
 
@@ -194,6 +215,8 @@ def main():
     adj, indeg, outdeg = build_debruijn_graph(
         seqs, args.kmer, args.min_count
     )
+    print(f"{Counter(outdeg.values())}")
+    
     contigs = find_eulerian_trails(adj, indeg, outdeg)
     if not contigs:
         sys.exit("No contigs assembled (graph may be empty).")

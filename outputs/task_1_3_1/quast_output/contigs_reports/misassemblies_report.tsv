@@ -15,7 +15,7 @@ Misassembled contigs length	0
 # scaffold gap loc. mis.	0
 # unaligned mis. contigs	0
 # mismatches	0
-# indels	1
+# indels	0
     # indels (<= 5 bp)	0
-    # indels (> 5 bp)	1
-Indels length	41
+    # indels (> 5 bp)	0
+Indels length	0

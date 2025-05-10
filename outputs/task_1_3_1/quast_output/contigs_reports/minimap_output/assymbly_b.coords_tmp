@@ -1,1 +1,1 @@
-contig_1	1041	0	1041	+	reference_b	1000	0	1000	1000	1041	60	NM:i:41	ms:i:985	AS:i:943	nn:i:0	tp:A:P	cm:i:93	s1:i:956	s2:i:0	de:f:0.0010	rl:i:0	cg:Z:330M41I670M	cs:Z::330+cagaggaaatcaacctgggccggtacttacgatcagatcga:670
+contig_1	750	82	750	+	reference_b	1000	332	1000	668	668	60	NM:i:0	ms:i:668	AS:i:668	nn:i:0	tp:A:P	cm:i:72	s1:i:691	s2:i:0	de:f:0	rl:i:0	cg:Z:668M	cs:Z::668
