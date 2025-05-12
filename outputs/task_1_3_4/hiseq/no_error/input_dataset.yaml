@@ -1,4 +1,0 @@
-- "number": !!int "1"
-  "single reads":
-  - "/ibex/user/majnouym/cs249_a2/data/synthetic_dataset/reads/no_error_reads_hiseq_5k.fastq"
-  "type": "single"

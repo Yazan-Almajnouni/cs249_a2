@@ -1,5 +1,0 @@
-S1	E1	S2	E2	Reference	Contig	IDY	Ambiguous	Best_group
-107	1040	1	934	reference_r	contig_1	100.0		True
-CONTIG	contig_1	934	correct
-1	134	1	134	reference_r	contig_2	100.0		True
-CONTIG	contig_2	134	correct
