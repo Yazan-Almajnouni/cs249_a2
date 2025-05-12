@@ -1,0 +1,162 @@
+- STAGE: Before start
+  args: []
+  config_dir: ''
+  del_after: []
+  output_files: []
+  path: 'true'
+  short_name: before_start
+- STAGE: Read error correction
+  args: []
+  config_dir: ''
+  del_after: []
+  output_files: []
+  path: 'true'
+  short_name: ec_start
+- STAGE: Read error correction
+  args:
+  - /ibex/user/majnouym/cs249_a2/outputs/task_1_3_4/ont/error/corrected/configs/config.info
+  config_dir: corrected
+  del_after:
+  - tmp/hammer_cp49r3is
+  output_files:
+  - /ibex/user/majnouym/cs249_a2/outputs/task_1_3_4/ont/error/corrected/corrected.yaml
+  path: /ibex/sw/rl9c/spades/3.15.5/rl9_gnu12.2.0/spades/bin/spades-hammer
+  short_name: ec_runtool
+- STAGE: corrected reads compression
+  args:
+  - /ibex/sw/rl9c/spades/3.15.5/rl9_gnu12.2.0/spades/share/spades/spades_pipeline/scripts/compress_all.py
+  - --input_file
+  - /ibex/user/majnouym/cs249_a2/outputs/task_1_3_4/ont/error/corrected/corrected.yaml
+  - --ext_python_modules_home
+  - /ibex/sw/rl9c/spades/3.15.5/rl9_gnu12.2.0/spades/share/spades
+  - --max_threads
+  - '16'
+  - --output_dir
+  - /ibex/user/majnouym/cs249_a2/outputs/task_1_3_4/ont/error/corrected
+  - --gzip_output
+  config_dir: ''
+  del_after: []
+  output_files: []
+  path: /usr/bin/python
+  short_name: ec_compress
+- STAGE: Read error correction
+  args: []
+  config_dir: ''
+  del_after: []
+  output_files: []
+  path: 'true'
+  short_name: ec_finish
+- STAGE: Assembling
+  args: []
+  config_dir: ''
+  del_after: []
+  output_files: []
+  path: 'true'
+  short_name: as_start
+- STAGE: K21
+  args:
+  - /ibex/user/majnouym/cs249_a2/outputs/task_1_3_4/ont/error/K21/configs/config.info
+  config_dir: K21
+  del_after: []
+  output_files: []
+  path: /ibex/sw/rl9c/spades/3.15.5/rl9_gnu12.2.0/spades/bin/spades-core
+  short_name: k21
+- STAGE: K33
+  args:
+  - /ibex/user/majnouym/cs249_a2/outputs/task_1_3_4/ont/error/K33/configs/config.info
+  config_dir: K33
+  del_after: []
+  output_files: []
+  path: /ibex/sw/rl9c/spades/3.15.5/rl9_gnu12.2.0/spades/bin/spades-core
+  short_name: k33
+- STAGE: K55
+  args:
+  - /ibex/user/majnouym/cs249_a2/outputs/task_1_3_4/ont/error/K55/configs/config.info
+  config_dir: K55
+  del_after: []
+  output_files: []
+  path: /ibex/sw/rl9c/spades/3.15.5/rl9_gnu12.2.0/spades/bin/spades-core
+  short_name: k55
+- STAGE: K77
+  args:
+  - /ibex/user/majnouym/cs249_a2/outputs/task_1_3_4/ont/error/K77/configs/config.info
+  config_dir: K77
+  del_after: []
+  output_files: []
+  path: /ibex/sw/rl9c/spades/3.15.5/rl9_gnu12.2.0/spades/bin/spades-core
+  short_name: k77
+- STAGE: K99
+  args:
+  - /ibex/user/majnouym/cs249_a2/outputs/task_1_3_4/ont/error/K99/configs/config.info
+  config_dir: K99
+  del_after: []
+  output_files: []
+  path: /ibex/sw/rl9c/spades/3.15.5/rl9_gnu12.2.0/spades/bin/spades-core
+  short_name: k99
+- STAGE: K127
+  args:
+  - /ibex/user/majnouym/cs249_a2/outputs/task_1_3_4/ont/error/K127/configs/config.info
+  config_dir: K127
+  del_after: []
+  output_files: []
+  path: /ibex/sw/rl9c/spades/3.15.5/rl9_gnu12.2.0/spades/bin/spades-core
+  short_name: k127
+- STAGE: Copy files
+  args:
+  - /ibex/sw/rl9c/spades/3.15.5/rl9_gnu12.2.0/spades/share/spades/spades_pipeline/scripts/copy_files.py
+  - /ibex/user/majnouym/cs249_a2/outputs/task_1_3_4/ont/error/K127/before_rr.fasta
+  - /ibex/user/majnouym/cs249_a2/outputs/task_1_3_4/ont/error/before_rr.fasta
+  - /ibex/user/majnouym/cs249_a2/outputs/task_1_3_4/ont/error/K127/assembly_graph_after_simplification.gfa
+  - /ibex/user/majnouym/cs249_a2/outputs/task_1_3_4/ont/error/assembly_graph_after_simplification.gfa
+  - /ibex/user/majnouym/cs249_a2/outputs/task_1_3_4/ont/error/K127/final_contigs.fasta
+  - /ibex/user/majnouym/cs249_a2/outputs/task_1_3_4/ont/error/contigs.fasta
+  - /ibex/user/majnouym/cs249_a2/outputs/task_1_3_4/ont/error/K127/first_pe_contigs.fasta
+  - /ibex/user/majnouym/cs249_a2/outputs/task_1_3_4/ont/error/first_pe_contigs.fasta
+  - /ibex/user/majnouym/cs249_a2/outputs/task_1_3_4/ont/error/K127/strain_graph.gfa
+  - /ibex/user/majnouym/cs249_a2/outputs/task_1_3_4/ont/error/strain_graph.gfa
+  - /ibex/user/majnouym/cs249_a2/outputs/task_1_3_4/ont/error/K127/scaffolds.fasta
+  - /ibex/user/majnouym/cs249_a2/outputs/task_1_3_4/ont/error/scaffolds.fasta
+  - /ibex/user/majnouym/cs249_a2/outputs/task_1_3_4/ont/error/K127/scaffolds.paths
+  - /ibex/user/majnouym/cs249_a2/outputs/task_1_3_4/ont/error/scaffolds.paths
+  - /ibex/user/majnouym/cs249_a2/outputs/task_1_3_4/ont/error/K127/assembly_graph_with_scaffolds.gfa
+  - /ibex/user/majnouym/cs249_a2/outputs/task_1_3_4/ont/error/assembly_graph_with_scaffolds.gfa
+  - /ibex/user/majnouym/cs249_a2/outputs/task_1_3_4/ont/error/K127/assembly_graph.fastg
+  - /ibex/user/majnouym/cs249_a2/outputs/task_1_3_4/ont/error/assembly_graph.fastg
+  - /ibex/user/majnouym/cs249_a2/outputs/task_1_3_4/ont/error/K127/final_contigs.paths
+  - /ibex/user/majnouym/cs249_a2/outputs/task_1_3_4/ont/error/contigs.paths
+  config_dir: ''
+  del_after:
+  - .bin_reads
+  - tmp/spades_kciuhi4m
+  output_files: []
+  path: /usr/bin/python
+  short_name: copy_files
+- STAGE: Assembling
+  args: []
+  config_dir: ''
+  del_after: []
+  output_files: []
+  path: 'true'
+  short_name: as_finish
+- STAGE: Breaking scaffolds
+  args:
+  - /ibex/sw/rl9c/spades/3.15.5/rl9_gnu12.2.0/spades/share/spades/spades_pipeline/scripts/breaking_scaffolds_script.py
+  - --result_scaffolds_filename
+  - /ibex/user/majnouym/cs249_a2/outputs/task_1_3_4/ont/error/scaffolds.fasta
+  - --misc_dir
+  - /ibex/user/majnouym/cs249_a2/outputs/task_1_3_4/ont/error/misc
+  - --threshold_for_breaking_scaffolds
+  - '3'
+  config_dir: ''
+  del_after: []
+  output_files: []
+  path: /usr/bin/python
+  short_name: bs
+- STAGE: Terminate
+  args: []
+  config_dir: ''
+  del_after:
+  - configs
+  output_files: []
+  path: 'true'
+  short_name: terminate

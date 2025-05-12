@@ -1,0 +1,94 @@
+/ibex/sw/rl9c/quast/5.2.0/rl9_conda3/quast-5.2.0/quast.py outputs/task_1_3_4/ont/error/contigs.fasta -o quast_reports/quast_ont_error -r data/synthetic_dataset/GCF_000901155.1_ViralProj183710_genomic.fna
+
+Version: 5.2.0
+
+System information:
+  OS: Linux-5.14.0-427.20.1.el9_4.0.1.x86_64-x86_64-with-glibc2.34 (linux_64)
+  Python version: 3.10.0
+  CPUs number: 40
+
+Started: 2025-05-11 07:15:33
+
+Logging to /ibex/user/majnouym/cs249_a2/quast_reports/quast_ont_error/quast.log
+NOTICE: Output directory already exists and looks like a QUAST output dir. Existing results can be reused (e.g. previously generated alignments)!
+NOTICE: Maximum number of threads is set to 10 (use --threads option to set it manually)
+
+CWD: /ibex/user/majnouym/cs249_a2
+Main parameters: 
+  MODE: default, threads: 10, min contig length: 500, min alignment length: 65, min alignment IDY: 95.0, \
+  ambiguity: one, min local misassembly length: 200, min extensive misassembly length: 1000
+
+WARNING: Can't draw plots: python-matplotlib is missing or corrupted.
+
+Reference:
+  /ibex/user/majnouym/cs249_a2/data/synthetic_dataset/GCF_000901155.1_ViralProj183710_genomic.fna ==> GCF_000901155.1_ViralProj183710_genomic
+
+Contigs:
+  Pre-processing...
+  outputs/task_1_3_4/ont/error/contigs.fasta ==> contigs
+
+2025-05-11 07:15:33
+Running Basic statistics processor...
+  Reference genome:
+    GCF_000901155.1_ViralProj183710_genomic.fna, length = 30119, num fragments = 1, GC % = 41.24
+  Contig files: 
+    contigs
+  Calculating N50 and L50...
+    contigs, N50 = 29750, L50 = 1, auN = 29750.0, Total length = 29750, GC % = 41.24, # N's per 100 kbp =  0.00
+Done.
+
+2025-05-11 07:15:33
+Running Contig analyzer...
+  contigs
+  Logging to files /ibex/user/majnouym/cs249_a2/quast_reports/quast_ont_error/contigs_reports/contigs_report_contigs.stdout and contigs_report_contigs.stderr...
+  Aligning contigs to the reference
+  /ibex/sw/rl9c/quast/5.2.0/rl9_conda3/quast-5.2.0/quast_libs/minimap2/minimap2 -c \
+  -x asm10 -B5 -O4,16 --no-long-join -r 200 -N 50 -s 65 -z 200 --mask-level 0.9 --min-occ \
+  200 -g 2500 --score-N 2 --cs -t 10 quast_reports/quast_ont_error/quast_corrected_input/GCF_000901155.1_ViralProj183710_genomic.fna \
+  quast_reports/quast_ont_error/quast_corrected_input/contigs.fasta > quast_reports/quast_ont_error/contigs_reports/minimap_output/contigs.coords_tmp \
+  2>> quast_reports/quast_ont_error/contigs_reports/contigs_report_contigs.stderr
+  Analysis is finished.
+
+  Creating total report...
+    saved to /ibex/user/majnouym/cs249_a2/quast_reports/quast_ont_error/contigs_reports/misassemblies_report.txt, misassemblies_report.tsv, and misassemblies_report.tex
+  Transposed version of total report...
+    saved to /ibex/user/majnouym/cs249_a2/quast_reports/quast_ont_error/contigs_reports/transposed_report_misassemblies.txt, transposed_report_misassemblies.tsv, and transposed_report_misassemblies.tex
+  Creating total report...
+    saved to /ibex/user/majnouym/cs249_a2/quast_reports/quast_ont_error/contigs_reports/unaligned_report.txt, unaligned_report.tsv, and unaligned_report.tex
+Done.
+
+2025-05-11 07:15:33
+Running NA-NGA calculation...
+  contigs, Largest alignment = 29744, NA50 = 29744, NGA50 = 29744, LA50 = 1, LGA50 = 1
+Done.
+
+2025-05-11 07:15:33
+Running Genome analyzer...
+  NOTICE: No file with genomic features were provided. Use the --features option if you want to specify it.
+
+  NOTICE: No file with operons were provided. Use the -O option if you want to specify it.
+  contigs
+  Analysis is finished.
+Done.
+
+NOTICE: Genes are not predicted by default. Use --gene-finding or --glimmer option to enable it.
+
+2025-05-11 07:15:33
+Creating large visual summaries...
+This may take a while: press Ctrl-C to skip this step..
+  1 of 1: Creating Icarus viewers...
+Done
+
+2025-05-11 07:15:33
+RESULTS:
+  Text versions of total report are saved to /ibex/user/majnouym/cs249_a2/quast_reports/quast_ont_error/report.txt, report.tsv, and report.tex
+  Text versions of transposed total report are saved to /ibex/user/majnouym/cs249_a2/quast_reports/quast_ont_error/transposed_report.txt, transposed_report.tsv, and transposed_report.tex
+  HTML version (interactive tables and plots) is saved to /ibex/user/majnouym/cs249_a2/quast_reports/quast_ont_error/report.html
+  Icarus (contig browser) is saved to /ibex/user/majnouym/cs249_a2/quast_reports/quast_ont_error/icarus.html
+  Log is saved to /ibex/user/majnouym/cs249_a2/quast_reports/quast_ont_error/quast.log
+
+Finished: 2025-05-11 07:15:33
+Elapsed time: 0:00:00.488860
+NOTICEs: 5; WARNINGs: 1; non-fatal ERRORs: 0
+
+Thank you for using QUAST!

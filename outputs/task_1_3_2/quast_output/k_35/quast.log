@@ -1,0 +1,114 @@
+/ibex/sw/rl9c/quast/5.2.0/rl9_conda3/quast-5.2.0/quast.py outputs/task_1_3_2/assymbly_35.fasta -r data/toy_dataset/reference_r.fasta -o outputs/task_1_3_2/quast_output/k_35 --min-contig 100
+
+Version: 5.2.0
+
+System information:
+  OS: Linux-5.14.0-427.20.1.el9_4.0.1.x86_64-x86_64-with-redhat-9.4-Blue_Onyx (linux_64)
+  Python version: 3.5.6
+  CPUs number: 40
+
+Started: 2025-05-10 15:02:18
+
+Logging to /ibex/user/majnouym/cs249_a2/outputs/task_1_3_2/quast_output/k_35/quast.log
+NOTICE: Maximum number of threads is set to 10 (use --threads option to set it manually)
+
+CWD: /ibex/user/majnouym/cs249_a2
+Main parameters: 
+  MODE: default, threads: 10, min contig length: 100, min alignment length: 65, min alignment IDY: 95.0, \
+  ambiguity: one, min local misassembly length: 200, min extensive misassembly length: 1000
+
+Reference:
+  /ibex/user/majnouym/cs249_a2/data/toy_dataset/reference_r.fasta ==> reference_r
+
+Contigs:
+  Pre-processing...
+  outputs/task_1_3_2/assymbly_35.fasta ==> assymbly_35
+
+2025-05-10 15:02:19
+Running Basic statistics processor...
+  Reference genome:
+    reference_r.fasta, length = 1040, num fragments = 1, GC % = 51.25
+  Contig files: 
+    assymbly_35
+  Calculating N50 and L50...
+    assymbly_35, N50 = 934, L50 = 1, auN = 833.6, Total length = 1068, GC % = 51.12, # N's per 100 kbp =  0.00
+  Drawing Nx plot...
+    saved to /ibex/user/majnouym/cs249_a2/outputs/task_1_3_2/quast_output/k_35/basic_stats/Nx_plot.pdf
+  Drawing NGx plot...
+    saved to /ibex/user/majnouym/cs249_a2/outputs/task_1_3_2/quast_output/k_35/basic_stats/NGx_plot.pdf
+  Drawing cumulative plot...
+    saved to /ibex/user/majnouym/cs249_a2/outputs/task_1_3_2/quast_output/k_35/basic_stats/cumulative_plot.pdf
+  Drawing GC content plot...
+    saved to /ibex/user/majnouym/cs249_a2/outputs/task_1_3_2/quast_output/k_35/basic_stats/GC_content_plot.pdf
+  Drawing assymbly_35 GC content plot...
+    saved to /ibex/user/majnouym/cs249_a2/outputs/task_1_3_2/quast_output/k_35/basic_stats/assymbly_35_GC_content_plot.pdf
+Done.
+
+2025-05-10 15:02:20
+Running Contig analyzer...
+  assymbly_35
+  Logging to files /ibex/user/majnouym/cs249_a2/outputs/task_1_3_2/quast_output/k_35/contigs_reports/contigs_report_assymbly_35.stdout and contigs_report_assymbly_35.stderr...
+  Aligning contigs to the reference
+  /ibex/sw/rl9c/quast/5.2.0/rl9_conda3/quast-5.2.0/quast_libs/minimap2/minimap2 -c \
+  -x asm10 -B5 -O4,16 --no-long-join -r 200 -N 50 -s 65 -z 200 --mask-level 0.9 --min-occ \
+  200 -g 2500 --score-N 2 --cs -t 10 outputs/task_1_3_2/quast_output/k_35/quast_corrected_input/reference_r.fasta \
+  outputs/task_1_3_2/quast_output/k_35/quast_corrected_input/assymbly_35.fasta > outputs/task_1_3_2/quast_output/k_35/contigs_reports/minimap_output/assymbly_35.coords_tmp \
+  2>> outputs/task_1_3_2/quast_output/k_35/contigs_reports/contigs_report_assymbly_35.stderr
+  Analysis is finished.
+
+  Creating total report...
+    saved to /ibex/user/majnouym/cs249_a2/outputs/task_1_3_2/quast_output/k_35/contigs_reports/misassemblies_report.txt, misassemblies_report.tsv, and misassemblies_report.tex
+  Transposed version of total report...
+    saved to /ibex/user/majnouym/cs249_a2/outputs/task_1_3_2/quast_output/k_35/contigs_reports/transposed_report_misassemblies.txt, transposed_report_misassemblies.tsv, and transposed_report_misassemblies.tex
+  Creating total report...
+    saved to /ibex/user/majnouym/cs249_a2/outputs/task_1_3_2/quast_output/k_35/contigs_reports/unaligned_report.txt, unaligned_report.tsv, and unaligned_report.tex
+  Drawing misassemblies by types plot...
+    saved to /ibex/user/majnouym/cs249_a2/outputs/task_1_3_2/quast_output/k_35/contigs_reports/misassemblies_plot.pdf
+  Drawing misassemblies FRCurve plot...
+    saved to /ibex/user/majnouym/cs249_a2/outputs/task_1_3_2/quast_output/k_35/contigs_reports/misassemblies_frcurve_plot.pdf
+Done.
+
+2025-05-10 15:02:20
+Running NA-NGA calculation...
+  assymbly_35, Largest alignment = 934, NA50 = 934, NGA50 = 934, LA50 = 1, LGA50 = 1
+  Drawing cumulative plot...
+    saved to /ibex/user/majnouym/cs249_a2/outputs/task_1_3_2/quast_output/k_35/aligned_stats/cumulative_plot.pdf
+  Drawing NAx plot...
+    saved to /ibex/user/majnouym/cs249_a2/outputs/task_1_3_2/quast_output/k_35/aligned_stats/NAx_plot.pdf
+  Drawing NGAx plot...
+    saved to /ibex/user/majnouym/cs249_a2/outputs/task_1_3_2/quast_output/k_35/aligned_stats/NGAx_plot.pdf
+Done.
+
+2025-05-10 15:02:21
+Running Genome analyzer...
+  NOTICE: No file with genomic features were provided. Use the --features option if you want to specify it.
+
+  NOTICE: No file with operons were provided. Use the -O option if you want to specify it.
+  assymbly_35
+  Analysis is finished.
+  Skipping drawing Genome fraction, % histogram... (less than 2 columns histogram makes no sense)
+Done.
+
+NOTICE: Genes are not predicted by default. Use --gene-finding or --glimmer option to enable it.
+
+2025-05-10 15:02:21
+Creating large visual summaries...
+This may take a while: press Ctrl-C to skip this step..
+  1 of 2: Creating PDF with all tables and plots...
+  2 of 2: Creating Icarus viewers...
+Done
+
+2025-05-10 15:02:22
+RESULTS:
+  Text versions of total report are saved to /ibex/user/majnouym/cs249_a2/outputs/task_1_3_2/quast_output/k_35/report.txt, report.tsv, and report.tex
+  Text versions of transposed total report are saved to /ibex/user/majnouym/cs249_a2/outputs/task_1_3_2/quast_output/k_35/transposed_report.txt, transposed_report.tsv, and transposed_report.tex
+  HTML version (interactive tables and plots) is saved to /ibex/user/majnouym/cs249_a2/outputs/task_1_3_2/quast_output/k_35/report.html
+  PDF version (tables and plots) is saved to /ibex/user/majnouym/cs249_a2/outputs/task_1_3_2/quast_output/k_35/report.pdf
+  Icarus (contig browser) is saved to /ibex/user/majnouym/cs249_a2/outputs/task_1_3_2/quast_output/k_35/icarus.html
+  Log is saved to /ibex/user/majnouym/cs249_a2/outputs/task_1_3_2/quast_output/k_35/quast.log
+
+Finished: 2025-05-10 15:02:22
+Elapsed time: 0:00:04.369653
+NOTICEs: 4; WARNINGs: 0; non-fatal ERRORs: 0
+
+Thank you for using QUAST!

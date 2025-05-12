@@ -8,7 +8,6 @@ import argparse
 import sys
 from collections import defaultdict
 from copy import deepcopy
-from collections import Counter
 
 def parse_fastq(fastq_files):
     """
@@ -215,7 +214,6 @@ def main():
     adj, indeg, outdeg = build_debruijn_graph(
         seqs, args.kmer, args.min_count
     )
-    print(f"{Counter(outdeg.values())}")
     
     contigs = find_eulerian_trails(adj, indeg, outdeg)
     if not contigs:
